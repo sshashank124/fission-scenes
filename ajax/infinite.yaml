@@ -1,0 +1,40 @@
+passes: 128
+
+tracer:
+  type: path
+
+sampler:
+  type: sobol
+
+scene:
+  camera:
+    type: perspective
+    fov: 30
+    resolution: [768, 768]
+
+    transforms:
+      - look_at:
+          pos: [-65.6055, 47.5762, 24.3583]
+          target: [-64.8161, 47.2211, 23.8576]
+          up: [.299858, .934836, -.190177]
+
+  elements:
+    - type: mesh
+      obj: obj/ajax.obj
+      bsdf:
+        type: mirror
+
+    - type: mesh
+      obj: obj/plane.obj
+      bsdf:
+        type: diffuse
+        albedo:
+          type: constant
+          val: [.1, .4, .1]
+      transforms:
+        - scale: [100, 1, 100]
+
+    - type: infinitelight
+      intensity:
+        type: constant
+        val: [.2, .2, .8]
