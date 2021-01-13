@@ -1,10 +1,10 @@
-passes: 32
+passes: 4
 
 tracer:
   type: direct
 
 sampler:
-  type: sobol
+  type: independent
 
 scene:
   camera:
@@ -25,7 +25,7 @@ scene:
         type: diffuse
         albedo:
           type: constant
-          val: [0.8, 0.8, 0.8]
+          val: [.8, .8, .8]
 
     - type: pointlight
       power: [500, 250, 250]

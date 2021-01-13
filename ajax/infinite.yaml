@@ -1,4 +1,4 @@
-passes: 128
+passes: 64
 
 tracer:
   type: path
@@ -36,5 +36,5 @@ scene:
 
     - type: infinitelight
       intensity:
-        type: constant
-        val: [.2, .2, .8]
+        type: smooth_gradient
+        vals: [[.2, .2, .2], [.8, .8, .8]]
