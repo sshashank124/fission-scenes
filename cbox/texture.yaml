@@ -21,7 +21,7 @@ scene:
 
   elements:
     - type: mesh
-      obj: obj/walls.obj
+      obj: obj/ceil_floor.obj
       bsdf:
         type: diffuse
         albedo:
@@ -29,12 +29,20 @@ scene:
           val: [.725, .71, .68]
 
     - type: mesh
-      obj: obj/rightwall.obj
+      obj: obj/back_wall.obj
       bsdf:
         type: diffuse
         albedo:
           type: bitmap
-          src: images/right.png
+          src: images/bunny.jpg
+
+    - type: mesh
+      obj: obj/rightwall.obj
+      bsdf:
+        type: diffuse
+        albedo:
+          type: constant
+          val: [.161, .133, .427]
 
     - type: mesh
       obj: obj/leftwall.obj
