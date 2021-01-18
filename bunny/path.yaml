@@ -1,0 +1,58 @@
+passes: 64
+
+tracer:
+  type: path
+  depth: [50, 100]
+
+sampler:
+  type: sobol
+
+scene:
+  camera:
+    type: perspective
+    fov: 30
+    resolution: [768, 768]
+
+    transforms:
+      - scale: [-1, 1, 1]
+      - look_at:
+          pos: [-30, 20, -30]
+          target: [3, 10, 0]
+          up: [0, 1, 0]
+
+  elements:
+    - type: mesh
+      obj: obj/bunny.obj
+      bsdf:
+        type: diffuse
+        albedo:
+          type: constant
+          val: [.757, .604, .42]
+      transforms:
+        - scale: [100, 100, 100]
+        - rotate:
+            axis: [0, 1, 0]
+            angle: -130
+
+    - type: mesh
+      obj: obj/plane.obj
+      bsdf:
+        type: diffuse
+        albedo:
+          type: constant
+          val: [.05, .1, .05]
+      transforms:
+        - scale: [100, 1, 100]
+        - translate: [0, 3.55, 0]
+
+    - type: mesh
+      obj: obj/plane.obj
+      emission:
+        type: constant
+        val: [1, 1, 1]
+      transforms:
+        - scale: [20, 1, 20]
+        - rotate:
+            axis: [1, 0, 0]
+            angle: 180
+        - translate: [0, 30, 0]

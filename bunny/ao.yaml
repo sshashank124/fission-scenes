@@ -1,0 +1,35 @@
+passes: 64
+
+tracer:
+  type: ambient_occlusion
+
+sampler:
+  type: sobol
+
+scene:
+  camera:
+    type: perspective
+    fov: 30
+    resolution: [768, 768]
+
+    transforms:
+      - scale: [-1, 1, 1]
+      - look_at:
+          pos: [-30, 20, -30]
+          target: [3, 10, 0]
+          up: [0, 1, 0]
+
+  elements:
+    - type: mesh
+      obj: obj/bunny.obj
+      transforms:
+        - scale: [100, 100, 100]
+        - rotate:
+            axis: [0, 1, 0]
+            angle: -130
+
+    - type: mesh
+      obj: obj/plane.obj
+      transforms:
+        - scale: [100, 1, 100]
+        - translate: [0, 3.55, 0]
